@@ -1,0 +1,90 @@
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Filters</h4>
+    <div class="row">
+      <section class="app">
+        <div *ngFor="let item of weeks">
+          <article class="feature-week">
+            <input type="checkbox" id="feature1" />
+            <div>
+              <span> {{ item }} </span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="app">
+        <div *ngFor="let item of divisions">
+          <article class="feature-division">
+            <input type="checkbox" id="feature2" />
+            <div class="division">
+              <span> {{ item["name"] }} </span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="app"
+        style="display: flex; justify-content: space-evenly; margin-top: 10px"
+      >
+        <div
+          class="select2-primary"
+          style="width: 40%; height: 90px; overflow-y: auto"
+        >
+          <select
+            name="profit_center"
+            id="cp"
+            class="select2 select2-hidden-accessible"
+            multiple=""
+            data-dropdown-css-class="select2-primary"
+            style="width: 100%"
+            tabindex="-1"
+            aria-hidden="true"
+            data-placeholder="Yours Placeholder"
+            multiple
+          >
+            <option selected disabled>Profit Center:</option>
+
+            <option *ngFor="let item of profits">{{ item["name"] }}</option>
+          </select>
+        </div>
+
+        <div
+          class="select2-primary"
+          style="width: 40%; height: 90px; overflow-y: auto"
+        >
+          <select
+            name="organisations"
+            id="organisations"
+            class="select2 select2-hidden-accessible"
+            multiple=""
+            data-placeholder="Select a Profit center"
+            data-dropdown-css-class="select2-primary"
+            style="width: 100%"
+            tabindex="-1"
+            aria-hidden="true"
+          >
+            <option selected disabled>Organisations:</option>
+
+            <option *ngFor="let item of organisations">
+              {{ item["name"] }}
+            </option>
+          </select>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="border-top">
+    <div class="card-body">
+      <button
+        type="submit"
+        class="btn btn-primary"
+        style="width: 200px; margin-top: 20px"
+      >
+        Submit
+      </button>
+    </div>
+  </div>
+</div>
