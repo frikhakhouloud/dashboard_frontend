@@ -1,0 +1,315 @@
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <div class="border-top">
+      <div class="card-body">
+        <div class="space"></div>
+        <h3><u>Importation des fichiers</u></h3>
+        <br />
+        <form [formGroup]="form" (ngSubmit)="submitForm()">
+          <div class="form-group">
+            <label for="ccclient">Importer le fichier CCClient</label>
+            <input
+              type="file"
+              class="form-control-file"
+              id="ccclient"
+              (change)="uploadFileccclient($event)"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="cepc">Importer le fichier CEPC</label>
+            <input
+              type="file"
+              class="form-control-file"
+              id="cepc"
+              (change)="uploadFilecepc($event)"
+            />
+          </div>
+          <div class="form-group">
+            <label for="tcurr">Importer le fichier TCuur</label>
+            <input
+              type="file"
+              class="form-control-file"
+              id="tcurr"
+              (change)="uploadFiletcurr($event)"
+            />
+          </div>
+          <input
+            type="submit"
+            class="btn btn-primary"
+            style="width: 200px; margin-top: 20px"
+            value="upload files"
+          />
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="row">
+  <button type="button" class="btn btn-link" (click)="goToHomme()">
+    Go to Home
+  </button>
+</div> -->
+
+<!-- <div class="row">
+  <h1 style="text-align: center">welcome</h1>
+  <p><b>welcome: </b>{{ name }} <b>from</b> {{ location }}</p>
+</div>
+{{ getName() }} -->
+
+<!-- ngIf -->
+<!-- <div
+  class="row"
+  *ngIf="active"
+  style="background-color: rgb(226, 43, 150); border: 1px solid"
+>
+  <div class="col-md-3">
+    <h3>welcome {{ firstName }}</h3>
+  </div>
+</div> -->
+<!-- ngFor -->
+<!-- <div class="row">
+  <table class="table">
+    <tr>
+      <th><i class="fa fa-user-circle fa-lg" aria-hidden="true"></i>Name</th>
+      <th>Code</th>
+      <th>Country</th>
+    </tr>
+    <tr *ngFor="let item of dataList">
+      <td>
+        <strong>{{ item.name }}</strong>
+      </td>
+      <td>{{ item.code }}</td>
+      <td>{{ item.country }}</td>
+      <td><i class="fa fa-arrow-right" aria-hidden="true"></i></td>
+    </tr>
+  </table>
+</div> -->
+
+<!-- ngSwitch -->
+
+<!-- <div class="row">
+  <div [ngSwitch]="prenom">
+    <div *ngSwitchCase="'khalil'">welcome khalil</div>
+    <div *ngSwitchCase="'moussa'">welcome moussa</div>
+    <div *ngSwitchCase="'wassim'">welcome moussa</div>
+  </div>
+</div> -->
+<!-- <div class="c-upload">
+  <div class="c-upload-status">
+    <div class="c-upload-file">
+      <div class="c-upload-icon">
+        <i class="fa fa-file"></i>
+      </div>
+    </div>
+    <div class="c-upload-log">SELECT File CCCLIENT</div>
+  </div>
+  <div class="c-btn c-grey">
+    <span class="c-white"><i class="fa fa-paperclip c-f-grey"></i></span>
+    SELECT FILE
+  </div>
+</div> -->
+<!--  -->
+<!-- <div class="c-upload">
+  <div class="c-upload-status">
+    <div class="c-upload-file">
+      <div class="c-upload-icon">
+        <i class="fa fa-file"></i>
+        <div class="c-upload-icon-small c-blue">
+          <i class="fa fa-paperclip"></i>
+        </div>
+      </div>
+    </div>
+    <div class="c-upload-log">SELECT File CCCLIENT</div>
+  </div>
+  <div class="c-btn c-blue">
+    <span><i class="fa fa-arrow-circle-up"></i></span>
+    <div class="c-btn-text">UPLOAD VIDEO</div>
+  </div>
+</div> -->
+
+<!--  -->
+<!-- <div class="c-upload">
+  <div class="c-upload-status">
+    <div class="c-upload-file">
+      <div class="c-upload-icon">
+        <i class="fa fa-file"></i>
+        <div class="c-upload-icon-small c-green">
+          <i class="fa fa-check"></i>
+        </div>
+      </div>
+    </div>
+    <div class="c-upload-log">SELECT File CCCLIENT</div>
+  </div>
+  <div class="c-btn c-green">
+    <span><i class="fa fa-check-circle"></i></span>
+    <div class="c-btn-text">COMPLETED</div>
+  </div>
+</div> -->
+
+<section>
+  <div class="container p-5">
+    <!-- For demo purpose -->
+    <div class="row mb-5 text-center text-white">
+      <div class="col-lg-10 mx-auto">
+        <h1 class="display-4">Importation des fichiers</h1>
+      </div>
+    </div>
+    <!-- End -->
+
+    <div class="row">
+      <div class="col-lg-5 mx-auto">
+        <form [formGroup]="form" (ngSubmit)="submitForm()">
+          <div class="form-group">
+            <div class="p-5 bg-white shadow rounded-lg">
+              <img
+                src="https://res.cloudinary.com/mhmd/image/upload/v1557366994/img_epm3iz.png"
+                alt=""
+                width="200"
+                class="d-block mx-auto mb-4 rounded-pill"
+              />
+
+              <!-- Default bootstrap file upload-->
+
+              <h6 class="text-center mb-4 text-muted">
+                Importer fichier CCCLIENT
+              </h6>
+
+              <div class="custom-file overflow-hidden rounded-pill mb-5">
+                <input
+                  id="customFile"
+                  type="file"
+                  class="custom-file-input rounded-pill"
+                />
+                <label for="customFile" class="custom-file-label rounded-pill"
+                  >Choose file</label
+                >
+              </div>
+
+              <!-- End -->
+
+              <!-- Custom bootstrap upload file-->
+
+              <!-- End -->
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="p-5 bg-white shadow rounded-lg">
+              <img
+                src="https://res.cloudinary.com/mhmd/image/upload/v1557366994/img_epm3iz.png"
+                alt=""
+                width="200"
+                class="d-block mx-auto mb-4 rounded-pill"
+              />
+
+              <!-- Default bootstrap file upload-->
+
+              <h6 class="text-center mb-4 text-muted">
+                Importer fichier TCURR
+              </h6>
+
+              <div class="custom-file overflow-hidden rounded-pill mb-5">
+                <input
+                  id="customFile"
+                  type="file"
+                  class="custom-file-input rounded-pill"
+                />
+                <label for="customFile" class="custom-file-label rounded-pill"
+                  >Choose file</label
+                >
+              </div>
+
+              <!-- End -->
+
+              <!-- Custom bootstrap upload file-->
+
+              <!-- End -->
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="p-5 bg-white shadow rounded-lg">
+              <img
+                src="https://res.cloudinary.com/mhmd/image/upload/v1557366994/img_epm3iz.png"
+                alt=""
+                width="200"
+                class="d-block mx-auto mb-4 rounded-pill"
+              />
+
+              <!-- Default bootstrap file upload-->
+
+              <h6 class="text-center mb-4 text-muted">Importer fichier CEPC</h6>
+
+              <div class="custom-file overflow-hidden rounded-pill mb-5">
+                <input
+                  id="customFile"
+                  type="file"
+                  class="custom-file-input rounded-pill"
+                />
+                <label for="customFile" class="custom-file-label rounded-pill"
+                  >Choose file</label
+                >
+              </div>
+
+              <!-- End -->
+
+              <!-- Custom bootstrap upload file-->
+
+              <!-- End -->
+            </div>
+          </div>
+          <label
+            for="fileUpload"
+            class="file-upload btn btn-primary btn-block rounded-pill shadow"
+            ><i class="fa fa-upload mr-2"></i>upload files
+            <input
+              id="fileUpload"
+              type="submit"
+              class="btn btn-primary"
+              style="width: 200px; margin-top: 20px"
+              value="upload files"
+            />
+          </label>
+        </form>
+        <!-- 
+        <form [formGroup]="form" (ngSubmit)="submitForm()">
+          <div class="form-group">
+            <label for="ccclient">Importer le fichier CCClient</label>
+            <input
+              type="file"
+              class="form-control-file"
+              id="ccclient"
+              (change)="uploadFileccclient($event)"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="cepc">Importer le fichier CEPC</label>
+            <input
+              type="file"
+              class="form-control-file"
+              id="cepc"
+              (change)="uploadFilecepc($event)"
+            />
+          </div>
+          <div class="form-group">
+            <label for="tcurr">Importer le fichier TCuur</label>
+            <input
+              type="file"
+              class="form-control-file"
+              id="tcurr"
+              (change)="uploadFiletcurr($event)"
+            />
+          </div>
+          <input
+            type="submit"
+            class="btn btn-primary"
+            style="width: 200px; margin-top: 20px"
+            value="upload files"
+          />
+        </form> -->
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,5 +1,12 @@
 import { Component, OnInit } from "@angular/core";
 import axios from "axios";
+import {
+  FormBuilder,
+  FormGroup,
+  FormArray,
+  FormControl,
+  Validators,
+} from "@angular/forms";
 
 @Component({
   selector: "app-filtre",
@@ -11,7 +18,18 @@ export class FiltreComponent implements OnInit {
   profits = [];
   organisations = [];
   weeks = [];
-  constructor() {}
+
+  form: FormGroup;
+  /* Hobbies: Array<any> =[
+    {name: 'Cricket', value:'Cricket'},
+    {name: 'TV', value:'TV'},
+  ]; */
+  constructor(private fb: FormBuilder) {
+    this.form = this.fb.group({
+      //checkArray: this.fb.array([]),
+      //valeur par defaut false
+    });
+  }
 
   ngOnInit(): void {
     this.getdivision();
@@ -22,7 +40,8 @@ export class FiltreComponent implements OnInit {
 
   getdivision() {
     axios
-      .get("http://127.0.0.1:8000/division/")
+      // .get("http://127.0.0.1:8000/division/?format=json")
+      .get("http://127.0.0.1:8000/filtre/division/")
       .then((res) => {
         console.log(res.data);
         this.divisions = res.data.Results;
@@ -34,7 +53,7 @@ export class FiltreComponent implements OnInit {
 
   getprofit() {
     axios
-      .get("http://127.0.0.1:8000/profit/")
+      .get("http://127.0.0.1:8000/filtre/profit/")
       .then((res) => {
         console.log(res.data);
         this.profits = res.data.Results;
@@ -46,7 +65,7 @@ export class FiltreComponent implements OnInit {
 
   getorganisation() {
     axios
-      .get("http://127.0.0.1:8000/organisation/")
+      .get("http://127.0.0.1:8000/filtre/organisation/")
       .then((res) => {
         console.log(res.data);
         this.organisations = res.data.Results;
@@ -58,7 +77,7 @@ export class FiltreComponent implements OnInit {
 
   getweek() {
     axios
-      .get("http://127.0.0.1:8000/range/")
+      .get("http://127.0.0.1:8000/filtre/range/")
       .then((res) => {
         console.log(res.data);
         this.weeks = res.data;
@@ -66,5 +85,29 @@ export class FiltreComponent implements OnInit {
       .catch((err) => {
         console.log(err);
       });
+  }
+
+  onCkeckboxChange(e: any) {
+    const checkArray: FormArray = this.form.get("checkArray") as FormArray;
+  }
+  submitForm() {
+    console.log(this.form.value);
+  }
+
+  /* readfile() {
+    var link;
+
+    axios
+      .post("http://localhost:8000/order/readfile/", link)
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  } */
+
+  getMessage() {
+    console.log("hello message");
   }
 }
