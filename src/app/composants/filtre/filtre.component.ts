@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import axios from "axios";
+import { Router } from "@angular/router";
+
 import {
   FormBuilder,
   FormGroup,
@@ -24,7 +26,7 @@ export class FiltreComponent implements OnInit {
     {name: 'Cricket', value:'Cricket'},
     {name: 'TV', value:'TV'},
   ]; */
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private router: Router) {
     this.form = this.fb.group({
       //checkArray: this.fb.array([]),
       //valeur par defaut false
@@ -94,20 +96,20 @@ export class FiltreComponent implements OnInit {
     console.log(this.form.value);
   }
 
-  /* readfile() {
-    var link;
-
-    axios
-      .post("http://localhost:8000/order/readfile/", link)
-      .then((res) => {
-        console.log(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  } */
-
-  getMessage() {
+  onSubmit() {
     console.log("hello message");
+    // this.router.navigate(["/home/show"]);
   }
+
+  // filterDivision() {
+  //   axios
+  //     .get("http://localhost:8000/filtre/result/")
+  //     .then((res) => {
+  //       console.log(res.data);
+  //       this.divisions = res.data.Results;
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }
 }

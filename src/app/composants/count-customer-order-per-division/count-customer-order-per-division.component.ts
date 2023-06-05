@@ -17,39 +17,21 @@ export class CountCustomerOrderPerDivisionComponent implements OnInit {
       count: number;
     }
 
-    // this.RenderChart();
-
     axios
       .get<ChartData[]>("http://localhost:8000/order/count_order_par_division/")
 
       .then((response) => {
-        // const labels = response.data.division;
-        // const data = response.data.count;
-
-        /* const data = response.data;
-        const labels = data.map((item) => item.division);
-        const counts = data.map((item) => item.count); */
-
         const data = response.data;
         const uniqueDivisions = Array.from(
           new Set(data.map((item) => item.division))
         );
-        //const counts: number[] = [];
         const counts = data.map((item) => item.count);
 
         uniqueDivisions.forEach((division) => {
           const divisionData = data.filter(
             (item) => item.division === division
           );
-          /*  const totalCount = divisionData.reduce(
-            //(sum, item) => sum + item.count,
-            (sum, item) => sum + item.count,
-
-            0
-          );
-          counts.push(totalCount); */
         });
-        //this.RenderChart(labels, counts);
         this.RenderChart(uniqueDivisions, counts);
       })
       .catch((error) => {

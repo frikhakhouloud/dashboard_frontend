@@ -17,6 +17,8 @@ import { CountCustomerOrderPerErrorsComponent } from "./composants/count-custome
 import { CostCustomerOrderPerErrorsComponent } from "./composants/cost-customer-order-per-errors/cost-customer-order-per-errors.component";
 import { ImportFilesComponent } from "./composants/import-files/import-files.component";
 import { HttpClientModule } from "@angular/common/http";
+import { FilterResultComponent } from "./composants/filter-result/filter-result.component";
+import { RouterModule } from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { HttpClientModule } from "@angular/common/http";
     CountCustomerOrderPerErrorsComponent,
     CostCustomerOrderPerErrorsComponent,
     ImportFilesComponent,
+    FilterResultComponent,
   ],
   imports: [
     BrowserModule,
