@@ -15,7 +15,7 @@ export class CountCustomerOrderPerErrorsComponent implements OnInit {
     }
 
     axios
-      .get<ChartData[]>("http://localhost:8000/order/order_par_errors/")
+      .get<ChartData[]>("http://127.0.0.1:8000/order/order_par_errors/")
 
       .then((response) => {
         const data = response.data;

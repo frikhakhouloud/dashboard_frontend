@@ -16,7 +16,7 @@ export class CostCustomerOrderPerDivisionComponent implements OnInit {
     }
 
     axios
-      .get<ChartData[]>("http://localhost:8000/order/count_order_par_division/")
+      .get<ChartData[]>("http://127.0.0.1:8000/order/count_order_par_division/")
 
       .then((response) => {
         const data = response.data;

@@ -2,12 +2,13 @@ import { Component, OnInit } from "@angular/core";
 import { Chart, registerables } from "node_modules/chart.js";
 Chart.register(...registerables);
 import axios from "axios";
+
 @Component({
-  selector: "app-filter-cost-per-division",
-  templateUrl: "./filter-cost-per-division.component.html",
-  styleUrls: ["./filter-cost-per-division.component.css"],
+  selector: "app-filter-count-per-division",
+  templateUrl: "./filter-count-per-division.component.html",
+  styleUrls: ["./filter-count-per-division.component.css"],
 })
-export class FilterCostPerDivisionComponent implements OnInit {
+export class FilterCountPerDivisionComponent implements OnInit {
   ngOnInit(): void {
     interface ChartData {
       division: string;
@@ -41,7 +42,7 @@ export class FilterCostPerDivisionComponent implements OnInit {
   }
 
   RenderChart() {
-    const ctx = new Chart("fcostdivision", {
+    const ctx = new Chart("fdivision", {
       type: "bar",
       data: {
         labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],

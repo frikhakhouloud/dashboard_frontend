@@ -18,7 +18,10 @@ import { CostCustomerOrderPerErrorsComponent } from "./composants/cost-customer-
 import { ImportFilesComponent } from "./composants/import-files/import-files.component";
 import { HttpClientModule } from "@angular/common/http";
 import { FilterResultComponent } from "./composants/filter-result/filter-result.component";
+
 import { RouterModule } from "@angular/router";
+import { FilterCountPerDivisionComponent } from "./composants/filter-count-per-division/filter-count-per-division.component";
+import { FilterCostPerDivisionComponent } from './composants/filter-cost-per-division/filter-cost-per-division.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +40,8 @@ import { RouterModule } from "@angular/router";
     CostCustomerOrderPerErrorsComponent,
     ImportFilesComponent,
     FilterResultComponent,
+    FilterCountPerDivisionComponent,
+    FilterCostPerDivisionComponent,
   ],
   imports: [
     BrowserModule,

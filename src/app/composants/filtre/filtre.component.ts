@@ -98,12 +98,12 @@ export class FiltreComponent implements OnInit {
 
   onSubmit() {
     console.log("hello message");
-    // this.router.navigate(["/home/show"]);
+    //this.router.navigate(["/home/show"]);
   }
 
   // filterDivision() {
   //   axios
-  //     .get("http://localhost:8000/filtre/result/")
+  //     .get("http:/127.0.0.1:8000/filtre/result/")
   //     .then((res) => {
   //       console.log(res.data);
   //       this.divisions = res.data.Results;
