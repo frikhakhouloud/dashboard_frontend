@@ -8,18 +8,18 @@ jobs:
   ci:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout ✅
+      - name: Checkout 
         uses: actions/checkout@v2
-      - name: Setup 🏗
+      - name: Setup 
         uses: actions/setup-node@v2
         with:
           node-version: lts/*
           cache: 'npm'
-      - name: Install ⚙️
+      - name: Install 
         run: npm ci
-      - name: Build 🛠
+      - name: Build
         run: npm run build:ci
-      - name: Test 📋
+      - name: Test
         run: npm run test:ci
        
         
