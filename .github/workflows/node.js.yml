@@ -26,6 +26,7 @@ jobs:
         
       - name: Docker Push
         run: |
+          docker push khouloudfrikha/dashboard_frontend:${{ github.sha }}
           docker push khouloudfrikha/dashboard_frontend:latest
          
         
