@@ -35,5 +35,5 @@ jobs:
       - name: Publish to Docker Hub
         uses: docker/build-push-action@v3
         with:
-         repository: khouloudfrikha/dashboard_frontend
+         repository: khouloudfrikha/test
          tags: latest, ${{ github.run_number }}
