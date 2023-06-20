@@ -26,7 +26,6 @@ jobs:
         
       - name: Docker Push
         run: |
-          docker push khouloudfrikha/dashboard_frontend:${{ github.sha }}
-          echo "Workflow run number: ${{ github.run_number }}"
+          docker push khouloudfrikha/dashboard_frontend:latest
          
         
