@@ -25,5 +25,5 @@ jobs:
         run: docker build . --file Dockerfile --tag khouloudfrikha/dashboard_frontend:${{ github.sha }}
         
       - name: Docker Push
-        run: docker push khouloudfrikha/dashboard_frontend:${{ github.sha }}
+        run: docker push khouloudfrikha/dashboard_frontend:${{ github.sha }} --tag latest, ${{ github.run_number }}
         
