@@ -45,11 +45,23 @@ export class FilterCountPerDivisionComponent implements OnInit {
     const ctx = new Chart("fdivision", {
       type: "bar",
       data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        // labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        labels: ["2110", "2100", "2300"],
+
         datasets: [
           {
-            label: "# of Votes",
-            data: [12, 19, 3, 5, 2, 3],
+            label: "21",
+            data: [439, 2604, 847],
+            backgroundColor: [
+              "rgba(255, 99, 132, 0.2)",
+              "rgba(75, 192, 192, 0.2)",
+              "rgba(153, 102, 255, 0.2)",
+            ],
+            borderColor: [
+              "rgb(255, 99, 132)",
+              "rgb(75, 192, 192)",
+              "rgb(153, 102, 255)",
+            ],
             borderWidth: 1,
           },
         ],

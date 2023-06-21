@@ -14,41 +14,27 @@ export class FilterCostPerDivisionComponent implements OnInit {
       count: number;
     }
     this.RenderChart();
-
-    //   axios
-    //     .get<ChartData[]>("http://127.0.0.1:8000/filtre/result/")
-
-    //     .then((response) => {
-
-    //       const data = response.data;
-    //       const uniqueDivisions = Array.from(
-    //         new Set(data.map((item) => item.division))
-    //       );
-    //       const counts = data.map((item) => item.count);
-
-    //       uniqueDivisions.forEach((division) => {
-    //         const divisionData = data.filter(
-    //           (item) => item.division === division
-    //         );
-
-    //       });
-    //       this.RenderChart(uniqueDivisions, counts);
-    //     })
-    //     .catch((error) => {
-    //       console.error("Error, error");
-    //     });
-    // }
   }
 
   RenderChart() {
     const ctx = new Chart("fcostdivision", {
       type: "bar",
       data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        labels: ["2110", "2100", "2300"],
         datasets: [
           {
-            label: "# of Votes",
-            data: [12, 19, 3, 5, 2, 3],
+            label: "21",
+            data: [3965984, 2556929, 2303329],
+            backgroundColor: [
+              "rgba(255, 99, 132, 0.2)",
+              "rgba(75, 192, 192, 0.2)",
+              "rgba(153, 102, 255, 0.2)",
+            ],
+            borderColor: [
+              "rgb(255, 99, 132)",
+              "rgb(75, 192, 192)",
+              "rgb(153, 102, 255)",
+            ],
             borderWidth: 1,
           },
         ],
