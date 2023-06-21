@@ -1,0 +1,31 @@
+name: Build & Push
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - uses: actions/checkout@v2
+        
+      - name: docker login
+        env:
+         DOCKER_USER: ${{ secrets.DOCKER_USERNAME }}
+         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        run: |
+          docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+        
+      - name: Build the docker image
+        run: docker build . --file Dockerfile --tag khouloudfrikha/dashboard_frontend:${{ github.sha }}
+        
+      - name: Docker Push
+        run: |
+          docker push khouloudfrikha/dashboard_frontend:${{ github.sha }}
+         
+        
