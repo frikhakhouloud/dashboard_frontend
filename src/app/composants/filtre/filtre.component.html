@@ -1,6 +1,6 @@
 <div class="card">
   <!-- <form [formGroup]="form" (ngSubmit)="submitForm()" novalidate> -->
-  <form method="POST">
+  <form [formGroup]="form" method="POST">
     <div class="card-body">
       <h4 class="card-title">Filters</h4>
       <div class="row">
@@ -8,7 +8,11 @@
         <section class="app">
           <div *ngFor="let item of weeks">
             <article class="feature-week">
-              <input type="checkbox" id="feature1" />
+              <input
+                type="checkbox"
+                name="week_year_{{ item }}"
+                formControlName="week_year_{{ item }}"
+              />
               <div>
                 <span> {{ item }} </span>
               </div>
@@ -19,7 +23,11 @@
         <section class="app">
           <div *ngFor="let item of divisions">
             <article class="feature-division">
-              <input type="checkbox" id="feature2" />
+              <input
+                type="checkbox"
+                id="feature2"
+                formControlName="division_{{ item.name }}"
+              />
               <div class="division">
                 <span> {{ item["name"] }} </span>
               </div>
@@ -37,10 +45,10 @@
             style="width: 40%; height: 90px; overflow-y: auto"
           >
             <select
+              formControlName="profit_center_ctrl"
               name="profit_center"
               id="cp"
               class="select2 select2-hidden-accessible"
-              multiple=""
               data-dropdown-css-class="select2-primary"
               style="width: 100%"
               tabindex="-1"
@@ -50,7 +58,9 @@
             >
               <option selected disabled>Profit Center:</option>
 
-              <option *ngFor="let item of profits">{{ item["name"] }}</option>
+              <option *ngFor="let item of profits">
+                {{ item["name"] }}
+              </option>
             </select>
           </div>
           <!-- liste organisation -->
