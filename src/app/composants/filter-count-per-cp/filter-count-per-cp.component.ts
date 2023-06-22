@@ -1,14 +1,13 @@
 import { Component, OnInit } from "@angular/core";
 import { Chart, registerables } from "node_modules/chart.js";
 Chart.register(...registerables);
-import axios from "axios";
 
 @Component({
-  selector: "app-filter-count-per-division",
-  templateUrl: "./filter-count-per-division.component.html",
-  styleUrls: ["./filter-count-per-division.component.css"],
+  selector: "app-filter-count-per-cp",
+  templateUrl: "./filter-count-per-cp.component.html",
+  styleUrls: ["./filter-count-per-cp.component.css"],
 })
-export class FilterCountPerDivisionComponent implements OnInit {
+export class FilterCountPerCpComponent implements OnInit {
   ngOnInit(): void {
     interface ChartData {
       division: string;
@@ -18,25 +17,26 @@ export class FilterCountPerDivisionComponent implements OnInit {
   }
 
   RenderChart() {
-    const ctx = new Chart("fdivision", {
+    const ctx = new Chart("fcp", {
       type: "bar",
       data: {
-        // labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-        labels: ["2110", "2100", "2300"],
+        labels: ["111", "107", "106", "117"],
 
         datasets: [
           {
             label: "21",
-            data: [439, 2604, 847],
+            data: [3500, 2100, 1700, 900],
             backgroundColor: [
               "rgba(255, 99, 132, 0.2)",
               "rgba(75, 192, 192, 0.2)",
               "rgba(153, 102, 255, 0.2)",
+              "rgba(201, 203, 207, 0.2)",
             ],
             borderColor: [
               "rgb(255, 99, 132)",
               "rgb(75, 192, 192)",
               "rgb(153, 102, 255)",
+              "rgb(201, 203, 207)",
             ],
             borderWidth: 1,
           },

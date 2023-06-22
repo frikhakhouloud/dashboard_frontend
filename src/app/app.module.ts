@@ -22,6 +22,10 @@ import { FilterResultComponent } from "./composants/filter-result/filter-result.
 import { RouterModule } from "@angular/router";
 import { FilterCountPerDivisionComponent } from "./composants/filter-count-per-division/filter-count-per-division.component";
 import { FilterCostPerDivisionComponent } from './composants/filter-cost-per-division/filter-cost-per-division.component';
+import { FilterCountPerCpComponent } from './composants/filter-count-per-cp/filter-count-per-cp.component';
+import { FilterCostPerCpComponent } from './composants/filter-cost-per-cp/filter-cost-per-cp.component';
+import { FilterCountPerOrganismeComponent } from './composants/filter-count-per-organisme/filter-count-per-organisme.component';
+import { FilterCostPerOrganismeComponent } from './composants/filter-cost-per-organisme/filter-cost-per-organisme.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +46,10 @@ import { FilterCostPerDivisionComponent } from './composants/filter-cost-per-div
     FilterResultComponent,
     FilterCountPerDivisionComponent,
     FilterCostPerDivisionComponent,
+    FilterCountPerCpComponent,
+    FilterCostPerCpComponent,
+    FilterCountPerOrganismeComponent,
+    FilterCostPerOrganismeComponent,
   ],
   imports: [
     BrowserModule,
